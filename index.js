@@ -1,19 +1,33 @@
-// Defina abaixo o nome do herói
-let heroi = "James"
-
-// Defina abaixo quanto de XP o herói possuí
-let xp = 5005
-
-// Qual a dificuldade do jogo?
-    // 1: fácil - 1*XP
-    // 2: médio - 2*XP
-    // 3: difícil - 3*XP
-let dificuldade = 1
-
+// VARIÁVEIS
+let heroi = "Saladeiro" // Defina abaixo o nome do herói
+let xp = 9200 // Defina abaixo quanto de XP o herói possuí
+let dificuldade = 1 // Qual a dificuldade do jogo? 1: fácil - 1*XP | 2: médio - 2*XP | 3: difícil - 3*XP
 let nivel
 
-xp = xp * dificuldade
+// __________________________
+// Verificação da dificuldade
+if(dificuldade >= 1 && dificuldade <=3){
+    xp = xp * dificuldade
+}else{
+    dificuldade = 1
+}
 
+// SAÍDA - Definição da dificuldade escolhida
+switch(dificuldade){
+    case 1:
+        console.log("Dificuldade escolhida: Fácil")
+        break
+
+    case 2:
+        console.log("Dificuldade escolhida: Média")
+        break
+
+    case 3:
+        console.log("Dificuldade escolhida: Difícil")
+        break
+}
+
+// Analise do nível
 if(xp <= 1000){
     nivel = "Ferro"
 }else if(xp >= 1001 && xp <= 2000 ){
@@ -32,8 +46,6 @@ if(xp <= 1000){
     nivel = "Radiante"
 }
 
-// Saída
+// SAÍDA
 console.log("O Heroí de nome " + heroi + " está no nível de " + nivel + "!")
-
-// Verificação da pontuação total do XP
-console.log("XP total: " + xp + "!")
+console.log("XP total: " + xp + "!") // Verificação da pontuação total do XP
